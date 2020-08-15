@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ECatalogue</string>
+    <string-array name="BreakdownTypes">
+        <item>Books</item>
+        <item>Series</item>
+    </string-array>
+</resources>
