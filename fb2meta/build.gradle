@@ -1,0 +1,23 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+task copyTestResources(type: Copy) {
+    from "${projectDir}/src/test/resources"
+    into "${buildDir}/classes/kotlin/test"
+}
+
+processTestResources.dependsOn copyTestResources
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'commons-io:commons-io:2.7'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'junit:junit:4.12'
+    implementation 'io.github.microutils:kotlin-logging:1.7.8'
+
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12
+    testImplementation group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.30'
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
