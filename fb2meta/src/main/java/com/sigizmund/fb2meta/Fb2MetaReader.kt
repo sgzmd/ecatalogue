@@ -6,6 +6,7 @@ import org.xml.sax.Attributes
 import org.xml.sax.SAXException
 import org.xml.sax.helpers.DefaultHandler
 import java.io.InputStream
+import java.util.*
 import javax.xml.parsers.SAXParserFactory
 
 data class Fb2Meta(val title: String, val authors: List<String>, val series: String)
@@ -37,10 +38,10 @@ internal class Fb2DocHandler : DefaultHandler() {
 
     override fun characters(ch: CharArray?, start: Int, length: Int) {
         if (callCharacterProcessor) {
-            val s = String(ch!!)
-            val ss = s.substring(start, start + length)
-            logger.debug { "characters($ss)" }
-            characterProcessor(ss)
+            val subarray = Arrays.copyOfRange(ch, start, start+length)
+            val subst = String(subarray)
+            logger.debug { "characters($subst)" }
+            characterProcessor(subst)
         }
     }
 
