@@ -42,6 +42,17 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'junit:junit:4.12'
+    implementation 'io.github.microutils:kotlin-logging:1.7.8'
+
+    def autoValueVersion = "1.7.4"
+    implementation             "com.google.auto.value:auto-value-annotations:${autoValueVersion}"
+    kapt "com.google.auto.value:auto-value:${autoValueVersion}"
+
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12
+    testImplementation group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.30'
+
     def room_version = "2.2.5"
 
     implementation "androidx.room:room-runtime:$room_version"
