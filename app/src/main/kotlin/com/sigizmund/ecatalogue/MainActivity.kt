@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.spinner_view.view.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,10 +27,10 @@ class MainActivity : AppCompatActivity() {
         ArrayAdapter.createFromResource(
             this,
             R.array.BreakdownTypes,
-            R.layout.spinner_view
+            R.layout.spinner_item_view
         ).also { adapter ->
             // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(R.layout.spinner_view)
+            adapter.setDropDownViewResource(R.layout.spinner_item_view)
             // Apply the adapter to the spinner
             spinner.adapter = adapter
         }

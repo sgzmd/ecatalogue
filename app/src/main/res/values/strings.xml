@@ -3,5 +3,13 @@
     <string-array name="BreakdownTypes">
         <item>Books</item>
         <item>Series</item>
+        <item>Genres</item>
+        <item>Formats</item>
+    </string-array>
+
+    <string-array name="SortType">
+        <item>By name</item>
+        <item>By author</item>
+        <item>By added date</item>
     </string-array>
 </resources>

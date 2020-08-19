@@ -7,6 +7,6 @@
     android:layout_height="wrap_content"
     android:ellipsize="marquee"
     android:textSize="30dp"
-    android:layout_margin="30dp"
-    android:padding="15dp"
+    android:layout_margin="20dp"
+    android:padding="5dp"
     android:fontFamily="sans-serif-condensed-light"/>
